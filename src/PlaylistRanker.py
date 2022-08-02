@@ -1,3 +1,12 @@
+import lastfmget
+
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
+
+sp = spotify.Spotify(auth_manager=SpotifyClientCredentials(
+    client_id='',
+    client_secret=''
+))
 
 from dataclasses import dataclass
 from enum import Enum
@@ -29,3 +38,6 @@ if __name__ == "__main__":
     songs = [] # Load from playlistURL
 
     scrobbles = [] # Load from LastFmApi
+
+def get_songs(playlist):
+    playlist = sp.get_playlist(url=playlistURL)
